@@ -1,0 +1,15 @@
+# Mission Control Progress
+
+## 2026-05-06 — Phase 4: 补齐基础设施
+
+### 2026-05-06 10:30
+- [x] US-INF-001: 补齐 SPEC 三文件（proposal/design/tasks）
+- [x] SPEC 门禁通过：86.5/100 > 70
+- [x] US-INF-002: 添加后端测试（21 tests, 16 pass）
+- [x] US-INF-003: 创建 gate-check-mission-control.py
+- [x] US-INF-004: ROADMAP.md + CHANGELOG.md
+
+### 2026-05-04
+- [x] Phase 1: 项目基础结构（Streamlit + FastAPI）
+- [x] Phase 2: 真实数据接入 + 暗色主题
+- [x] Phase 3: 详情展开 + Skills Graph

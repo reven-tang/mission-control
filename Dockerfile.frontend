@@ -1,0 +1,20 @@
+# Mission Control Frontend Dockerfile
+
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# 安装 Streamlit
+RUN pip install --no-cache-dir streamlit
+
+# 复制前端代码
+COPY frontend ./frontend
+
+# 暴露端口
+EXPOSE 8501
+
+CMD ["streamlit", "run", "frontend/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
