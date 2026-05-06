@@ -1,12 +1,12 @@
 # 🦀 Mission Control
 
-**OpenClaw 自闭环开发管理面板** — 实时查看 Agent 状态、管理任务看板、监控 Skills 生态系统和系统资源的统一控制台。
+**OpenClaw 统一管理控制台** — 实时查看 Agent 状态、管理任务看板、监控 Skills 生态系统和系统资源的 Web 面板。
 
 ## 功能
 
 | 模块 | 功能 |
 |------|------|
-| 📋 任务看板 | 三列看板（待办/进行中/完成），支持搜索过滤、项目筛选、一键同步 openspec |
+| 📋 任务看板 | 三列看板（待办/进行中/完成），支持搜索过滤、项目筛选、一键同步 |
 | 🤖 Agent 状态 | 实时展示活跃 Agent 的 ID、状态、模型、渠道和最近活动 |
 | ⏰ Cron 任务 | 定时任务监控：Heartbeat / Dreaming / Brain Healthcheck |
 | 💓 Healthcheck | Brain 健康检查面板，支持手动触发和历史记录查看 |
@@ -84,10 +84,6 @@ mission-control/
 - 后端：FastAPI, uvicorn, SQLAlchemy, psutil
 - 前端：Streamlit, requests
 - 可选：pyvis（Skills Graph 交互可视化）
-
-## 版本
-
-v2.0.0 — 全功能自闭环开发系统，12 User Stories 全部交付。
 
 ## License
 
