@@ -27,23 +27,25 @@ echo "后端 PID: $BACKEND_PID"
 # 等待后端启动
 sleep 3
 
-# 启动前端
-echo "启动前端..."
+# 后台启动前端
+echo "启动前端服务..."
 cd "$FRONTEND_DIR"
 if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi
 source venv/bin/activate
 pip install -q streamlit requests psutil
+nohup streamlit run app.py --server.port 8501 --server.headless true > /tmp/mission-control-frontend.log 2>&1 &
+FRONTEND_PID=$!
 
 echo "🎉 Mission Control 启动完成!"
-echo "后端: http://localhost:8000"
-echo "前端: http://localhost:8501"
+echo "后端: http://localhost:8000 (PID: $BACKEND_PID)"
+echo "前端: http://localhost:8501 (PID: $FRONTEND_PID)"
 echo ""
 echo "按 Ctrl+C 停止服务"
 
 # 捕获退出信号
-trap "kill $BACKEND_PID 2>/dev/null" EXIT
+trap "kill $BACKEND_PID $FRONTEND_PID 2>/dev/null" EXIT
 
 # 保持运行
 wait

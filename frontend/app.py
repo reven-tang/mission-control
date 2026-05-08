@@ -6,7 +6,7 @@ import components
 
 # ── 主题状态 ──
 if 'dark_mode' not in st.session_state:
-    st.session_state.dark_mode = True
+    st.session_state.dark_mode = False
 
 apply_theme(st)
 

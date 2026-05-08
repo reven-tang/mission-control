@@ -17,7 +17,7 @@
 
 - **双向任务同步**：看板"标记完成" → DB 更新 → 自动回写 `prd.json`
 - **Skills 评分展示**：四色分级 + Poor 技能高亮警告
-- **Vercel Design System**：暗色/亮色双主题，专业级 UI
+- **Vercel Design System**：暗色/亮色双主题（默认亮色），专业级 UI
 - **交互式 Graph**：支持 pyvis 力导向图可视化 Skills 关联
 - **Docker 部署**：docker-compose 一键启动前后端
 
@@ -74,7 +74,7 @@ mission-control/
 |------|------|
 | 后端 | FastAPI + SQLAlchemy + SQLite |
 | 前端 | Streamlit + Pyvis |
-| 设计 | Vercel Design System（暗色/亮色） |
+| 设计 | Vercel Design System（默认亮色/暗色可切换） |
 | 部署 | Docker + docker-compose |
 | CLI | Bash 一键启动脚本 |
 
