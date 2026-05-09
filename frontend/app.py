@@ -40,7 +40,7 @@ if refresh_sec == 0:
 st.sidebar.markdown("---")
 module = st.sidebar.radio(
     "导航",
-    ["📋 任务看板", "🤖 Agent 状态", "⏰ Cron 任务", "💓 Healthcheck", "🧠 Skills", "💻 系统资源"]
+    ["📋 任务看板", "🤖 Agent 状态", "⏰ Cron 任务", "💓 Healthcheck", "🦀 系统健康", "🧠 Skills", "💻 系统资源"]
 )
 
 # ── 主内容区 ──
@@ -72,6 +72,8 @@ elif "Cron" in module:
     components.render_cron()
 elif "Healthcheck" in module:
     components.render_healthcheck()
+elif "系统健康" in module:
+    components.render_health_dashboard()
 elif "Skills" in module:
     components.render_skills()
 elif "系统资源" in module:

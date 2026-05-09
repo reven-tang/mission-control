@@ -3,6 +3,8 @@
 import psutil
 from fastapi import APIRouter
 
+from ..services.health_aggregator import aggregator
+
 router = APIRouter(prefix="/system", tags=["system"])
 
 
@@ -31,3 +33,15 @@ def get_system_stats():
             "percent": disk.percent
         }
     }
+
+
+@router.get("/health")
+def get_health_dashboard():
+    """获取萨莉 OS 三系统健康仪表盘"""
+    return aggregator.get_full_health()
+
+
+@router.get("/health/summary")
+def get_health_summary():
+    """获取健康简版摘要"""
+    return aggregator.get_summary()

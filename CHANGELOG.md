@@ -1,5 +1,31 @@
 # Mission Control — CHANGELOG
 
+## v2.2.0 (2026-05-09)
+
+### 新增
+- **萨莉 OS 系统健康仪表盘**：新增三系统综合健康监控
+  - 🧠 记忆系统：页面数、链接数、Hub页、lint问题、搜索分
+  - 🔗 技能系统：合规率、超标数、图密度(当前/基线)、退役候选
+  - 🔁 自闭环系统：gate-check通过率、复利覆盖率、活跃项目
+  - 📊 综合评分：三系统加权总分 (记忆25%/技能35%/自闭环40%)
+
+### 新增文件
+- `backend/app/services/health_aggregator.py` — 三系统健康数据聚合服务
+- `frontend/components/health_dashboard.py` — 仪表盘组件
+- `openspec/changes/mission-control/proposal-phase4.md` — SPEC 文档
+- `openspec/changes/mission-control/design-phase4.md` — 设计文档
+- `openspec/changes/mission-control/tasks-phase4.md` — 任务清单
+
+### 修改文件
+- `backend/app/routers/system.py` — 新增 `/system/health` 和 `/system/health/summary`
+- `frontend/app.py` — 侧栏新增「🦀 系统健康」入口
+- `frontend/components/__init__.py` — 注册 health_dashboard 组件
+
+### 验证
+- 9/9 pytest 通过，覆盖率 88%
+- 浏览器验证 0 console error
+- gate-check BUILD + QA 门禁通过
+
 ## v2.1.0 (2026-05-08)
 
 ### 修复
